@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string("author");
             $table->longText("title");
-            $table->integer("pieces")->default(100);
             $table->timestamps();
         });
     }

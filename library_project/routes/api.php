@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\LendingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,12 @@ Route::get('/book/{id}',[BookController::class, 'show']);
 Route::post('/book',[BookController::class, 'store']);
 Route::put('/book/{id}',[BookController::class, 'update']);
 Route::delete('/book/{id}',[BookController::class, 'destroy']);
+
+
+Route::get('/lendings',[LendingController::class, 'index']);
+Route::get('/lendings/{user_id}/{copy_id}/{start}',[LendingController::class, 'show']);
+Route::post('/lendings',[LendingController::class, 'store']);
+Route::delete('/lendings/{user_id}/{copy_id}/{start}',[LendingController::class, 'destroy']);
+
 
 
